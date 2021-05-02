@@ -1,0 +1,701 @@
+body {
+    box-sizing: border-box;
+    width: 100%;
+    font: 16px/1.5 arial, helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* added these two classes fade and appear for counters in js file */
+.fade {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 1.5s all ease-in-out;
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol {
+    width: 100%;
+    list-style-type: none;
+    padding: 0 20px 0 20px;
+}
+
+.section-para {
+    text-align: center;
+    line-height: 1.8;
+    background: darkgray;
+    color: darkslategrey;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-para h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.section-para p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    color: darkslategrey;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.btn:hover i {
+    margin-left: 5px;
+}
+
+.menu-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    z-index: 2;
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../images/footer.png) no-repeat center center/ cover;
+    padding: 20px;
+    border-bottom: 10px solid lightgreen;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+}
+
+.main-nav ul li a {
+    color: #f4f4f4;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.main-nav a:hover {
+    border-bottom: 2px solid #f4f4f4;
+}
+
+/* SHOWCASE */
+
+.showcase {
+    height: 500px;
+    align-items: center;
+    text-align: center;
+    background: url(../images/showcase.png) no-repeat center fixed;
+    background-size: cover;
+    color: #f4f4f4;
+    flex-wrap: wrap;
+    margin-top: -42px;
+    border-bottom: 10px solid lightgreen;
+}
+
+.showcase h1 {
+    font-size: 50px;
+    padding: 150px 50px 0 50px;
+}
+
+.showcase p {
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+    color: #f4f4f4;
+}
+
+/* SECTION */
+#about {
+    display: flex;
+}
+
+.center {
+    width: 50%;
+    padding: 20px;
+}
+
+.center img {
+    width: 100%;
+    box-shadow: 0 0 20px;
+    border-radius: 20px;
+}
+
+.section-paraX {
+    width: 50%;
+    padding: 20px;
+}
+
+.section-paraX div {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ANIMATED COUNTERS */
+
+.cont {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* removed overflow:auto was showing the scrolling bar on the y axis which wasn't fancy */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    text-align: center;
+    align-items: center;
+    color: darkgreen;
+}
+
+.cont a i {
+    color: darkgreen;
+}
+
+.cont .counter {
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.counters {
+    padding: 40px 20px;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+}
+
+.counters p {
+    font-size: 45px;
+    text-align: center;
+    color: darkgreen;
+    margin-bottom: -10px;
+}
+
+/* GALLERY */
+
+.gallery {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.images img {
+    height: 320px;
+    width: 100%;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+}
+
+.events {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.events h2 {
+    color: #313131;
+}
+
+.img1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.daily {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.daily h2 {
+    color: #313131;
+}
+
+.img2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20p;
+    margin: 20px;
+}
+
+.gallery-items img {
+    text-decoration: none;
+    color: #333;
+    margin: 20px 0 20px 0;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+}
+
+/* COURSES */
+/* for media screen max-width:500px adjust the courses to be centered horizontally .this related to courses-container section. */
+.courses {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.images2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+.images2 img {
+    height: 350px;
+    width: 100%;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+}
+
+.ourcourses {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.ourcourses h3 {
+    margin-bottom: -15px;
+}
+
+.ourcourses li {
+    margin: 20px;
+    width: 29%;
+    padding: 10px;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+    background: url(../images/footer.png) no-repeat center center/cover;
+}
+
+#ourcourses {
+    display: flex;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+#ourcourses li {
+    margin: 20px;
+    width: 29%;
+    padding: 20px;
+    box-shadow: 0 0 10px #000;
+    border-radius: 10px;
+    background: url(../images/footer.png) no-repeat center center/cover;
+}
+
+#ourcourses p {
+    text-align: justify;
+}
+
+.ourcourses li:hover {
+    opacity: 0.8;
+}
+
+#ul li {
+    list-style-type: circle;
+    background: none;
+    box-shadow: none;
+    text-align: left;
+    width: 80%;
+}
+
+.course {
+    text-align: center;
+    align-items: center;
+}
+
+.contact {
+    text-align: justify;
+    margin: auto;
+    padding: auto;
+}
+
+p.contact {
+    margin-bottom: 20px;
+}
+
+.teachers {
+    align-items: center;
+    text-align: center;
+}
+
+.teachers div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figure:hover {
+    box-shadow: 0 0 20px #311313;
+}
+
+figcaption {
+    text-align: center;
+    margin-bottom: 1em;
+    width: 240px;
+    padding: 0 20px 20px 20px;
+}
+
+.portraits {
+    height: 200px;
+    margin: 20px;
+    border: 2px solid #343434;
+}
+
+.rooms {
+    align-items: center;
+    text-align: center;
+}
+
+/* FOOTER */
+/* you should set this
+.third ul li:nth-child(2),.third ul li:nth-child(3),.third ul li:nth-child(4){
+    display: flex;
+    align-items: center;
+    to make the social logo and they corresponding names vertically centered
+*/
+.footer-container {
+    background: url(../images/footer.png) no-repeat center center/ cover;
+    border-top: 10px solid lightgreen;
+    margin-bottom: -20px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 2;
+}
+
+.third ul li a {
+    color: #343434;
+}
+
+.third ul li:nth-child(2),
+.third ul li:nth-child(3),
+.third ul li:nth-child(4) {
+    display: flex;
+    align-items: center;
+}
+
+.copyright-line {
+    background: lightgreen;
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+}
+
+@media (max-width:1350px) {
+    #about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .center {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .center img {
+        width: 107%;
+    }
+
+    .section-paraX {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .section-paraX div {
+        width: 107%;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1125px) {
+
+    .img1,
+    .img2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img1 img,
+    .img2 img {
+        width: 100%;
+        height: 600px;
+    }
+
+    .gallery-items2 {
+        display: none;
+    }
+}
+
+@media (max-width:1100px) {
+    #ourcourses {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 20px;
+        width: 100%;
+    }
+
+    #ourcourses li {
+        width: 85%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .teachers div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin: 20px;
+    }
+
+    figcaption {
+        margin: auto;
+    }
+}
+
+@media (max-width:960px) {
+    .main-nav ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-nav ul li a {
+        padding-bottom: 0;
+    }
+
+    .showcase {
+        height: 400px;
+    }
+
+    .showcase p {
+        display: none;
+    }
+
+    .images img {
+        height: 200px;
+    }
+
+    .images2 {
+        grid-template-columns: 1fr;
+    }
+
+    .ourcourses {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ourcourses li {
+        width: 87%;
+    }
+
+    #ourcourses {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 20px;
+        width: 100%;
+    }
+
+    #ourcourses li {
+        width: 80%;
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo {
+        float: left;
+    }
+
+    .menu-btn {
+        display: block;
+        color: #f4f4f4;
+    }
+
+    .menu-btn:hover {
+        opacity: 0.5;
+    }
+
+    .main-nav ul.main-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: lightgreen;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        padding: 30px;
+        border-right: #333 2px solid;
+        opacity: 0.8;
+        transform: translateX(-500px);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .main-nav ul.main-menu li {
+        padding: 10px;
+        border-bottom: #333 2px solid;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .main-nav ul.show li:last-child {
+        border-bottom: 0;
+    }
+
+    .main-nav ul.show li a {
+        color: #303030;
+    }
+
+    .main-nav ul.show li a:hover {
+        border-bottom: 2px #333 solid;
+    }
+
+    .main-nav ul.main-menu.show {
+        transform: translateX(-20px);
+    }
+
+    .images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .images img {
+        height: 400px;
+    }
+
+    .images2 {
+        grid-template-columns: 1fr;
+    }
+
+    .ourcourses li {
+        width: 83%;
+    }
+
+    .ourcourses li p {
+        display: none;
+    }
+
+    .ourcourses h3 {
+        margin: 15px;
+    }
+
+    #ourcourses {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 20px;
+        width: 100%;
+    }
+
+    #ourcourses li {
+        width: 75%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .teachers div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        margin: 20px;
+    }
+
+    .gallery-items img {
+        height: 400px;
+    }
+}
+
+@media (max-width:500px) {
+    .showcase h1 {
+        font-size: 40px;
+    }
+
+    .images img {
+        height: 300px;
+    }
+
+    .ourcourses li {
+        width: 78%;
+    }
+
+    #ourcourses {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 20px;
+        width: 130%;
+    }
+
+    #ul {
+        display: none;
+    }
+
+    #ourcourses li {
+        width: 50%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #ourcourses li p {
+        display: none;
+    }
+
+    #ourcourses li .contact {
+        display: block;
+        text-align: center;
+        align-items: center;
+    }
+
+    .teachers div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        margin: 20px;
+    }
+
+    .gallery-items {
+        height: 150px;
+    }
+}
